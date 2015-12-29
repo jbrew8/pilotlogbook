@@ -1,15 +1,12 @@
 # Pilot Logbook
-Place this app in **owncloud/apps/**
 
-## Publish to App Store
+Pilot Logbook is an [ownCloud](https://owncloud.org/) app that pilots can use to log their flight time. It is a digital reproduction of ASA's Standard Pilot Log. Currently the app allows you to log flights, edit them, and view the complete log. Future versions will include more exciting features such as exporting the log to various formats and generating reports.
 
-First get an account for the [App Store](http://apps.owncloud.com/) then run:
+## System Requirements
 
-    make appstore_package
+Pilot Logbook requires ownCloud version 8.1 or greater.
 
-The archive is located in build/artifacts/appstore and can then be uploaded to the App Store.
+## Installation
 
-## Running tests
-After [Installing PHPUnit](http://phpunit.de/getting-started.html) run:
+Installation is the same as other ownCloud apps. Place the contents of this repository in the 'apps' directory of your ownCloud deployment, login as admin, and enable the app.
 
-    phpunit -c phpunit.xml
