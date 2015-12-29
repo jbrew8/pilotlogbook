@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+    <id>pilotlogbook</id>
+    <name>Pilot Logbook</name>
+    <description>An digital version of the Standard Pilot Log </description>
+    <licence>AGPL</licence>
+    <author>John Brewer VIII</author>
+    <version>0.0.3</version>
+    <namespace>PilotLogbook</namespace>
+    <category>other</category>
+    <dependencies>
+        <owncloud min-version="8.1" />
+    </dependencies>
+</info>

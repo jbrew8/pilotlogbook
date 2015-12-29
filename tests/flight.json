@@ -1,0 +1,28 @@
+{
+    "id" : 3,
+    "userID" : "admin",
+    "date" : "2015-12-01",
+    "aircraft" : "C-172S",
+    "tailNumber" : "N12345",
+    "departurePoint" : "W29",
+    "arrivalPoint" : "ESN",
+    "singleEngineLand" : "1.2",
+    "multiEngineLand" : null,
+    "rotorcraft" : null,
+    "dualReceived" : null,
+    "pilotInCommand" : "1.2",
+    "secondInCommand" : null
+    "asFlightInstructor" : null,
+    "day" : "1.2", 
+    "night" : null,
+    "crossCountry" : null, 
+    "actualInstrument" : null,
+    "simulatedInstrument" : null,
+    "instrumentApproach" : null,
+    "dayLandings" : 1,
+    "nightLandings" : null,
+    "total" : "1.2",
+    "cfiName" : null,
+    "cfiNumber" : null,
+    "notes" : "This was a boring and uneventful flight"
+}

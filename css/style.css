@@ -1,0 +1,44 @@
+#hello {
+	color: red;
+}
+
+
+#flight_table {
+    padding: 5px;
+
+}
+
+.flight_table_bottom > div {
+    padding-left: 10px;
+    padding-right: 10px;
+    display:inline;
+}
+
+th, td{
+    padding: 5px;
+    text-align: center;
+}
+
+.pilot_type{
+    background-color: #CCCCCC;
+}
+
+.aircraft_info, .aircraft_info.tr{
+    background-color: #BBBBBB;
+}
+
+fieldset {
+    padding:10px;
+}
+
+fieldset > legend {
+    border-style: solid;
+    border-bottom-width:2px;
+}
+
+#edit_flight label, #edit_flight input, #edit_flight textarea {
+    float:left;
+}
+
+label,input[type="submit"]{clear:left}
+label{width:150px}
