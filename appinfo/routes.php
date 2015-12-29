@@ -30,6 +30,7 @@ return [
        ['name' => 'flight#add', 'url' => '/add', 'verb' => 'POST'],
        ['name' => 'flight#update', 'url' => '/update', 'verb' => 'POST'],
        ['name' => 'flight#delete', 'url' => '/delete/{id}', 'verb' => 'DELETE'],
+       ['name' => 'flight#summary', 'url' => '/summary', 'verb' => 'GET'],
        ['name' => 'flight_api#preflighted_cors', 'url' => '/api/0.1/{path}',
          'verb' => 'OPTIONS', 'requirements' => ['path' => '.+']]
     ]

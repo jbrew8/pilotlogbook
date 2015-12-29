@@ -90,4 +90,13 @@ class FlightController extends Controller {
         });
     }
 
+
+    /**
+     * @NoAdminRequired
+     *
+     * @param string $userId
+     */
+    public function summary() {
+        return $this->service->getSummary($this->userId);
+    }
 }

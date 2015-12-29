@@ -1,11 +1,18 @@
-#hello {
-	color: red;
+h1 {
+    font-size: 2.0em;
 }
 
+#log-summary {
+    font-size: 1.3em;
+    padding-top: 35px;
+}
+
+#flight_table_wrapper {
+    width: 75%;
+}
 
 #flight_table {
     padding: 5px;
-
 }
 
 .flight_table_bottom > div {
@@ -19,13 +26,8 @@ th, td{
     text-align: center;
 }
 
-.pilot_type{
-    background-color: #CCCCCC;
-}
 
-.aircraft_info, .aircraft_info.tr{
-    background-color: #BBBBBB;
-}
+/* CSS for flight add/edit form */
 
 fieldset {
     padding:10px;

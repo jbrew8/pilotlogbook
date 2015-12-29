@@ -14,6 +14,14 @@
 
 	getLog();
 
+	var url = OC.generateUrl('apps/pilotlogbook/summary');
+	$.get(url, function(data){
+	    $('#totalFlightHours').replaceWith(data['total']);
+	    $('#totalDual').replaceWith(data['totalDual']);
+	    $('#totalSolo').replaceWith(data['totalSolo']);
+	});
+
+	
 
 	/* Navigation menu functions */
 	
@@ -89,7 +97,7 @@ function getLog() {
 	"dom": '<ft><"flight_table_bottom"irlp>',
 	"columnDefs": [
             {
-                "targets": [ 0, 7, 8, 11, 12, 16, 17, 18 ],
+                "targets": [ 0, 7, 8, 11, 12, 15, 16, 17, 18, 22, 23, 24],
                 "visible": false,
                 "searchable": false
             },
@@ -102,9 +110,8 @@ function getLog() {
         ],
 	columns: [
 	    { data: 'id' },
-	    //{ data: 'userID' },
 	    { data: 'date' },
-	    { className: "menu", data: 'aircraft' },
+	    { data: 'aircraft' },
 	    { data: 'tailNumber' },
 	    { data: 'departurePoint' },
 	    { data: 'arrivalPoint' },
@@ -129,6 +136,17 @@ function getLog() {
 	    { data: 'notes'},
 	    { data: null}
 	]
+    });
+
+    // Allow show/hide for all columns
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+	
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+	
+        // Toggle the visibility
+        column.visible( ! column.visible() );
     });
 
     // Add 'edit' action that takes user to a log entry screen
@@ -218,68 +236,3 @@ function updateContent(content){
     $('#app-content-wrapper').append(content);
 }
 
-
-
-/*
-
-STUFF I DON'T NEED
-
-
-
-$('input#submitButton').click( function() {
-    $.ajax({
-        url: 'some-url',
-        type: 'post',
-        dataType: 'json',
-        data: $('form#myForm').serialize(),
-        success: function(data) {
-                   ... do something with the data...
-                 }
-    });
-});
-
-$('#myForm').submit(function() {
-    // get all the inputs into an array.
-    var $inputs = $('#myForm :input');
-
-    // not sure if you wanted this, but I thought I'd add it.
-    // get an associative array of just the values.
-    var values = {};
-    $inputs.each(function() {
-        values[this.name] = $(this).val();
-    });
-
-});
-
-// Flight class/prototype
-var Flight = function(jsonFlight){
-    this.id = jsonFlight["id"];
-    this.userID = jsonFlight["userID"];
-    this.date = jsonFlight["date"];
-    this.aircraft = jsonFlight["aircraft"];
-    this.tailNumber = jsonFlight["tailNumber"];
-    this.departurePoint = jsonFlight["departurePoint"];
-    this.arrivalPoint = jsonFlight["arrivalPoint"];
-    this.singleEngineLand = jsonFlight["singleEngineLand"];
-    this.multiEngineLand = jsonFlight["multiEngineLand"];
-    this.rotorcraft = jsonFlight["rotorcraft"];
-    this.dualReceived = jsonFlight["dualReceived"];
-    this.pilotInCommand = jsonFlight["pilotInCommand"];
-    this.secondInCommand = jsonFlight["secondInCommand"];
-    this.asFlightInstructor = jsonFlight["asFlightInstructor"];
-    this.day = jsonFlight["day"];
-    this.night = jsonFlight["night"];
-    this.crossCountry = jsonFlight["crossCountry"];
-    this.actualInstrument = jsonFlight["actualInstrument"];
-    this.simulatedInstrument = jsonFlight["simulatedInstrument"];
-    this.instrumentApproach = jsonFlight["instrumentApproach"];
-    this.dayLandings = jsonFlight["dayLandings"];
-    this.nightLandings = jsonFlight["nightLandings"];
-    this.total = jsonFlight["total"];
-    this.cfiName = jsonFlight["cfiName"];
-    this.cfiNumber = jsonFlight["cfiNumber"];
-    this.notes = jsonFlight["notes"];
-
-}
-
-*/

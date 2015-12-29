@@ -1,7 +1,8 @@
 <?php
 script('pilotlogbook', 'script');
-script('pilotlogbook', 'datatables');
+script('pilotlogbook', 'datatables.min');
 style('pilotlogbook', 'style');
+style('pilotlogbook', 'datatables.min');
 ?>
 
 <div id="app">

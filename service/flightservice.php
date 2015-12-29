@@ -69,6 +69,11 @@ class FlightService {
         }
     }
 
+    public function getSummary($userId) {
+        $summary = $this->mapper->getSummary($userId);
+        return $summary;
+    }
+
 }
 
 /*
