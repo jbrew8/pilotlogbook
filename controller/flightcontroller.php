@@ -48,7 +48,10 @@ class FlightController extends Controller {
         return new TemplateResponse('pilotlogbook', 'part.log', $params, '');
     }
 
-
+    /**
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     */
     public function add($flight){
         return $this->service->create($flight, $this->userId);
     }
