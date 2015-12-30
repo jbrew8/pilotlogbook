@@ -105,9 +105,7 @@
 		<input type="text" name="cfiNumber" />
 	</fieldset>
 
-<!--	<fieldset> -->
-		<input type="submit" id="update_flight" value="Add Flight" >
-<!--	</fieldset> -->
+    <input type="submit" id="update_flight" value="Add Flight" >
 	
 </form>
 

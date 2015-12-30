@@ -78,67 +78,6 @@ class Flight extends Entity implements JsonSerializable {
         ];
     }
 
-    // Getters and Setters
-    /*
-    public function getId(){
-        return $this->id;
-    }
-
-    public function setId($id){
-        $this->id = $id;
-    }
-
-    public function getUserId(){
-        return $this->user_id;
-    }
-
-    public function setUserId($userId){
-        $this->user_id = $userId;
-    }
-
-    public function getDate(){
-        return $this->date;
-    }
-    public function setDate($date){
-        $this->date = $date;
-    }
-
-    public function getAircraft(){
-        return $this->aircraft;
-    }
-    public function setAircraft($aircraft){
-        $this->aircraft = $aircraft;
-    }
-
-    public function getTailNumber(){
-        return $this->tailNumber;
-    }
-    public function setTailNumber($tailNumber){
-        $this->tailNumber = $tailNumber;
-    }
-
-    public function getDeparturePoint(){
-        return $this->departurePoint;
-    }
-    public function setDeparturePoint($departurePoint){
-        $this->departurePoint = $departurePoint;
-    }
-
-    public function getArrivalPoint(){
-        return $this->arrivalPoint;
-    }
-    public function setArrivalPoint($arrivalPoint){
-        $this->arrivalPoint = $arrivalPoint;
-    }
-
-    public function getTotal(){
-        return $this->total;
-    }
-    public function setTotal($total){
-        $this->total = $total;
-    }
-    */
-
     /**
        helper method to create an instance of a flight object from
        an array of key/value pairs (a decoded JSON object).
@@ -171,7 +110,7 @@ class Flight extends Entity implements JsonSerializable {
         $flight->setNightLandings($array['nightLandings']);
         $flight->setTotal($array['total']);
         $flight->setCfiName($array['cfiName']);
-        $flight->setCfiName($array['cfiNumber']);
+        $flight->setCfiNumber($array['cfiNumber']);
         $flight->setNotes($array['notes']);
 
         return $flight;
