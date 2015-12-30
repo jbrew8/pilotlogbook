@@ -70,6 +70,7 @@ class FlightController extends Controller {
 
     /**
      * @NoAdminRequired
+     * @NoCSRFRequired
      *
      * @param int $id
      * @param string $title
