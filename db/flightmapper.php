@@ -30,11 +30,18 @@ class FlightMapper extends Mapper {
 
         while($row = $result->fetchRow()) {
             $result->closeCursor();
-            return array(
+            $summary = array(
                 "total" => $row['total'],
                 "totalDual" => $row['totalDual'],
                 "totalSolo" => $row['totalSolo']
             );
+
+            // if any totals are null, replace them with a zero
+            foreach($summary as $k => $v){
+                if(is_null($summary[$k]))
+                    $summary[$k] = 0;
+            }
+            return $summary;
         }
 
     }
