@@ -13,20 +13,12 @@
     $(document).ready(function(){
 
 	getLog();
-
-	var url = OC.generateUrl('apps/pilotlogbook/summary');
-	$.get(url, function(data){
-	    $('#totalFlightHours').replaceWith(data['total']);
-	    $('#totalDual').replaceWith(data['totalDual']);
-	    $('#totalSolo').replaceWith(data['totalSolo']);
-	});
-
-	
+	updateSummary();
 
 	/* Navigation menu functions */
 	
 	$( "#show_log" ).click(function() {
-	    updateLog();
+	    refreshLog();
 	});
 	
 	$( "#log_flight" ).click(function() {
@@ -70,7 +62,7 @@
 			dataType:"json",
 			success: function(){
 			    alert("Flight added successfully!");
-			    updateLog();
+			    refreshLog();
 			}
 			
 		    });
@@ -83,6 +75,18 @@
     });
 
 })(jQuery, OC);
+
+
+/* updateSummary()- updates the summary section of the flight log page */
+function updateSummary(){
+    var url = OC.generateUrl('apps/pilotlogbook/summary');
+    $.get(url, function(data){
+	$('#totalFlightHours').replaceWith(data['total']);
+	$('#totalDual').replaceWith(data['totalDual']);
+	$('#totalSolo').replaceWith(data['totalSolo']);
+    });
+
+}
 
 /* getLog()- a helper function that applies Datatables functionality to the main flight
    log table and activates the tables edit/delete controls. */
@@ -222,12 +226,13 @@ function getLog() {
 }
 			       
 		 
-function updateLog(){
+function refreshLog(){
     var url = OC.generateUrl('apps/pilotlogbook/log');
     $('#app-content-wrapper').empty();
     $.get(url, function(data){
 	$('#app-content-wrapper').append(data);
 	getLog();
+	updateSummary();
     });
 }
 
