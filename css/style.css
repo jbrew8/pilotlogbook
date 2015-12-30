@@ -2,6 +2,7 @@ h1 {
     font-size: 2.0em;
 }
 
+
 #log-summary {
     font-size: 1.3em;
     padding-top: 35px;
@@ -29,9 +30,26 @@ th, td{
 
 /* CSS for flight add/edit form */
 
+/* Surround required fields with a red border */
+input:required {
+    border-width: 2px;
+    border-color: red;
+}
+
+#edit_flight{
+    padding-top: 30px;
+}
+
 fieldset {
+    float: left;
     padding:10px;
 }
+
+
+#update_flight {
+    margin-left: 30px;
+}
+
 
 fieldset > legend {
     border-style: solid;
