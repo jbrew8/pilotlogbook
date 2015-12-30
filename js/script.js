@@ -196,7 +196,7 @@ function getLog() {
 		    dataType:"json",
 		    success: function(){
 			alert("Flight updated successfully!");
-			udpdateLog();
+			refreshLog();
 		    }
 		    
 		});
@@ -216,7 +216,7 @@ function getLog() {
 		url: deleteUrl,
 		type: 'delete',
 		success: function(data){
-		    updateLog();
+		    refreshLog();
 		}
 	    });
 
